@@ -1,4 +1,6 @@
-var display = {
+
+
+var view = {
 
 };
 
@@ -15,6 +17,7 @@ var arithmetic = {
     divide: function(){
 
     },
+    
     times: function(){
 
     }
@@ -32,6 +35,10 @@ var funcs = {
 
     clear: function(){
 
+    },
+
+    equals: function(){
+
     }
 
 };
@@ -39,3 +46,4 @@ var funcs = {
 var handlers = {
 
 }
+
