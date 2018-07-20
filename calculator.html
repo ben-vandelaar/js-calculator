@@ -6,7 +6,7 @@
     <title>Ben's Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="calculatorJs.js"></script>
+    
 </head>
 <body>
     <h1>Calculator</h1>
@@ -14,43 +14,35 @@
     <div class="calc-container">
         <div class="calculator">
             <div class="display-area">
-                <div class="display">
-                    <h2>0</h2>
-                </div>
+                <div id="output" class="display">0</div>
             </div>
-            <div class="interface">
-            <div class="row">
+            <div id="interface">
                 <button id="clear" class="func">C</button>
                 <button id="pos-neg" class="func">+/-</button>
                 <button id="percentage" class="func">%</button>
                 <button id="divide"  class="arithmetic">/</button>
-            </div>
-            </div>
-            <div class="row">
+                <br>
                 <button id="seven"  class="numbers">7</button>
                 <button id="eight" class="numbers">8</button>
                 <button id="nine" class="numbers">9</button>
                 <button id="times"  class="arithmetic">X</button>
-            </div>
-            <div class="row">
+                <br>
                 <button id="four" class="numbers">4</button>
                 <button id="five" class="numbers">5</button>
                 <button id="six" class="numbers">6</button>
                 <button id="minus"  class="arithmetic">-</button>
-            </div>
-            <div class="row">
+                <br>
                 <button id="one" class="numbers">1</button>
                 <button id="two" class="numbers">2</button>
                 <button id="three" class="numbers">3</button>
                 <button id="plus"  class="arithmetic">+</button>
-            </div>
-            <div class="row">
+                <br>
                 <button id="zero" class="numbers">0</button>
                 <button id="decimal" class="numbers">.</button>
                 <button id="equals" class="arithmetic">=</button>
             </div>
         </div>
     </div>
-
+    <script src="calculatorJs.js"></script>
 </body>
 </html>

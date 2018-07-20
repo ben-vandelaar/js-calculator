@@ -33,7 +33,7 @@ body {
     margin: 100px 0px;  
 }
 
-h2 , h1{
+h2 , h1, .display{
     color: whitesmoke;
     font-size: 300%;
 }
