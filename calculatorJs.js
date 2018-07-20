@@ -4,16 +4,25 @@ let outPutArea = document.getElementById('output');
 
 var buttons = {
 
-        one : document.getElementById('one'),
-        two : document.getElementById('two'),
-        three : document.getElementById('three'),
-        four : document.getElementById('four'),
-        five : document.getElementById('five'),
-        six : document.getElementById('six'),
-        seven : document.getElementById('seven'),
-        eight : document.getElementById('eight'),
-        nine : document.getElementById('nine'),
-        zero : document.getElementById('zero'),
+    one : document.getElementById('one'),
+    
+    two : document.getElementById('two'),
+    
+    three : document.getElementById('three'),
+    
+    four : document.getElementById('four'),
+    
+    five : document.getElementById('five'),
+    
+    six : document.getElementById('six'),
+    
+    seven : document.getElementById('seven'),
+    
+    eight : document.getElementById('eight'),
+    
+    nine : document.getElementById('nine'),
+    
+    zero : document.getElementById('zero'),
 
     clear: document.getElementById('clear'),
 
@@ -30,31 +39,13 @@ var buttons = {
     decimal : document.getElementById('decimal'),
 
     equals : document.getElementById('equals'),   
-}
-
-var arithmetic = {
-    
-    plus: function(){
-    
-    },
-    
-    minus: function(){
-
-    },
-
-    divide: function(){
-
-    },
-    
-    times: function(){
-
-    }
 };
+
 
 var funcs = {
 
     posNeg: function(){
-
+        outPutArea.innerHTML = parseInt(outPutArea.innerHTML)* -1;
     },
 
     percentage: function(){
@@ -67,12 +58,21 @@ var funcs = {
         },
 
     equals: function(){
-
+        outPutArea.innerHTML = eval(outPutArea.innerHTML);
+        console.log("equals button clicked");
     }
 
 };
 
 var handlers = {
+
+    equals : buttons.equals.addEventListener('click', function(){
+        funcs.equals()
+    }),
+
+    posNeg : buttons.posNeg.addEventListener('click', function(){
+        funcs.posNeg()
+    }),
 
     clear : buttons.clear.addEventListener('click', function(){
         funcs.clear()
@@ -121,4 +121,21 @@ var handlers = {
     decimal : buttons.decimal.addEventListener('click', function(){
         outPutArea.innerHTML += '.';
     }),
-}
+
+    times : buttons.times.addEventListener('click', function(){
+        outPutArea.innerHTML += '*';
+    }),
+
+    plus : buttons.plus.addEventListener('click', function(){
+        outPutArea.innerHTML += '+';
+    }),
+
+    minus : buttons.minus.addEventListener('click', function(){
+        outPutArea.innerHTML += '-';
+    }),
+
+    divide : buttons.divide.addEventListener('click', function(){
+        outPutArea.innerHTML += '/';
+    }),
+
+};
