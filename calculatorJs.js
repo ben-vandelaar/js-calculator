@@ -1,6 +1,8 @@
 
-var interface = document.getElementById("interface");
+var interface = document.getElementById('interface');
 var output = document.getElementById('output');
+var posNeg = document.getElementById('pos-neg');
+var percentage = document.getElementById('percentage');
 var entries = [];   
 var temp = '';
 output.innerHTML = 0;
@@ -9,12 +11,14 @@ output.innerHTML = 0;
 var funcs = { 
 
     posNeg: function(){
-        temp = parseInt()* -1;
-        console.log(temp);
+       var parsed = parseInt(temp) * -1;
+       temp = parsed; 
     },
 
     percentage: function(){
-        
+        num1 = entries.join('');
+        num2 = parseInt(temp);
+        temp =  parseInt(num1)/100*num2;   
     },
 
     clear: function(){
@@ -65,10 +69,14 @@ interface.addEventListener("click", function(e){
                 console.log(entries);
         }else if(clickedItem = '='){
             funcs.equals();
-        }else if(clickedItem = '+/-'){
-            funcs.posNeg();
         }
     e.stopPropagation();
 });
 
+posNeg.addEventListener('click', function(){
+    funcs.posNeg();
+});
 
+percentage.addEventListener('click', function(){
+    funcs.percentage();
+});
