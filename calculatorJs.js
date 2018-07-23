@@ -16,9 +16,14 @@ var funcs = {
     },
 
     percentage: function(){
+        if(entries.length === 0){
+            tempNum = parseInt(temp);
+            temp = tempNum/100;
+        }else{
         num1 = entries.join('');
         num2 = parseInt(temp);
-        temp =  parseInt(num1)/100*num2;   
+        temp =  parseInt(num1)/100*num2;
+        }   
     },
 
     clear: function(){
