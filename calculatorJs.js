@@ -22,7 +22,7 @@ var funcs = {
         }else{
         num1 = entries.join('');
         num2 = parseInt(temp);
-        temp =  parseInt(num1)/100*num2;
+        temp = parseInt(num1)/100*num2;
         }   
     },
 
@@ -41,7 +41,6 @@ var funcs = {
     },
 
 };
-
 
 interface.addEventListener("click", function(e){      
         
