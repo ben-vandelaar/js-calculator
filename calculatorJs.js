@@ -1,11 +1,16 @@
 
+var interface = document.getElementById("interface");
+var output = document.getElementById('output');
+var entries = [];   
+var temp = '';
+output.innerHTML = 0;
 
-let outPutArea = document.getElementById('output');
 
-var funcs = {   
+var funcs = { 
 
     posNeg: function(){
-        outPutArea.innerHTML = parseInt(outPutArea.innerHTML)* -1;
+        temp = parseInt()* -1;
+        console.log(temp);
     },
 
     percentage: function(){
@@ -13,29 +18,57 @@ var funcs = {
     },
 
     clear: function(){
-            outPutArea.innerHTML = '0';
-            console.log("clear button clicked");
+        temp = '';
+        entries = [];
+        output.innerHTML = 0;
         },
 
     equals: function(){
-        outPutArea.innerHTML = eval(outPutArea.innerHTML);
-        console.log("equals button clicked");
-    }
+        entries.push(temp);
+        temp = '';
+        numbers = entries.join('');
+        output.innerHTML = eval(numbers);
+        
+    },
 
 };
 
-var handlers = {
 
-    equals : buttons.equals.addEventListener('click', function(){
-        funcs.equals()
-    }),
+interface.addEventListener("click", function(e){      
+        
+    var clickedItem = e.target.innerHTML;
+        
+        if (!isNaN(clickedItem) || clickedItem === '.' ){
+           temp += clickedItem;
+            output.innerHTML = temp.substring(0,10);
+        }else if (clickedItem === 'C'){    
+            funcs.clear();
+        }else if(clickedItem === 'X'){
+            entries.push(temp);
+            entries.push('*');
+            temp = '';
+            console.log(entries);
+        }else if(clickedItem === '/'){
+            entries.push(temp);
+            entries.push('/');
+            temp = '';
+            console.log(entries);
+        }else if(clickedItem === '-'){
+            entries.push(temp);
+            entries.push('-');
+            temp = '';
+            console.log(entries);
+        }else if(clickedItem === '+'){
+                entries.push(temp);
+                entries.push('+');
+                temp = '';
+                console.log(entries);
+        }else if(clickedItem = '='){
+            funcs.equals();
+        }else if(clickedItem = '+/-'){
+            funcs.posNeg();
+        }
+    e.stopPropagation();
+});
 
-    posNeg : buttons.posNeg.addEventListener('click', function(){
-        funcs.posNeg()
-    }),
 
-    clear : buttons.clear.addEventListener('click', function(){
-        funcs.clear()
-    }),
-   
-};
